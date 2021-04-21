@@ -114,6 +114,15 @@
   height: 1em;
 }
 
+.footerLink {
+  margin-left: 10px;
+  color: rgb(113, 68, 203);
+}
+
+.footerLink:hover {
+  border-bottom: 1px solid rgb(113, 68, 203);
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
