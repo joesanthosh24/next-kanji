@@ -1,11 +1,12 @@
 import styled, { css } from "styled-components";
 
-const buttonSizes = css`
-  width: ${(props) => (props.lgBtn ? "120px" : props.mdBtn ? "100px" : "80px")};
+const buttonMargins = css`
   margin-left: ${(props) =>
     props.mlLg ? "15px" : props.mlMd ? "10px" : props.mlSm ? "5px" : 0};
   margin-right: ${(props) =>
     props.mrLg ? "15px" : props.mrMd ? "10px" : props.mrSm ? "5px" : 0};
+  margin-top: ${(props) =>
+    props.mtLg ? "15px" : props.mtMd ? "10px" : props.mtSm ? "5px" : 0};
 `;
 
 const buttonStyles = css`
@@ -41,6 +42,7 @@ export const Button = styled.button`
   border-radius: 20px;
   outline: none;
   transition: all 0.5s ease-in-out;
+  width: ${(props) => (props.lgBtn ? "120px" : props.mdBtn ? "100px" : "80px")};
   ${getButtonStyles}
-  ${buttonSizes}
+  ${buttonMargins}
 `;

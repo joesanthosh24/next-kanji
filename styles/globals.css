@@ -26,12 +26,34 @@ a {
   text-align: center;
 }
 
+.heading {
+  padding: 20px;
+  margin-top: 15px;
+}
+
 .heading-primary {
   color: #fff;
 }
 
 .heading-secondary {
   color: rgb(207, 188, 188);
+}
+
+.MuiIconButton-root {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.MuiPaper-root {
+  background-color: whitesmoke !important;
+}
+
+@media screen and (max-height: 780px) {
+  body {
+    height: 200vh;
+    overflow-y: scroll;
+  }
 }
 
 /* svg {

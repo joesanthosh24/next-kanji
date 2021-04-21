@@ -17,12 +17,14 @@ export default function Home() {
       <div className="page">
         <div className={pageStyles.home}>
           <FireKanji />
-          <h1 className="heading-primary">Fire Kanji</h1>
-          <h2 className="heading-secondary">Learn all Grade School kanji</h2>
-          <CustomButton mdBtn mrSm>
+          <div className="heading">
+            <h1 className="heading-primary">Fire Kanji</h1>
+            <h2 className="heading-secondary">Learn all Grade School kanji</h2>
+          </div>
+          <CustomButton mtMd mdBtn mrSm>
             Log In
           </CustomButton>
-          <CustomButton mdBtn invertedBtn mlSm>
+          <CustomButton mtLg mdBtn invertedBtn mlSm>
             Sign In
           </CustomButton>
         </div>

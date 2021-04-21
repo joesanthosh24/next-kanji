@@ -5,3 +5,9 @@
   color: #fff;
   flex: 1;
 }
+
+@media screen and (max-width: 1080px) {
+  .container {
+    background: linear-gradient(to right, #340881, #2473d8);
+  }
+}
