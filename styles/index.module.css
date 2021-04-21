@@ -1,0 +1,16 @@
+.home {
+  margin-top: 10rem;
+}
+
+.home > svg {
+  height: 100px;
+  width: 100px;
+}
+
+.home > svg > g {
+  transition: all 0.5s ease;
+}
+
+.home > svg:hover > g {
+  fill: #22a79cd0;
+}
