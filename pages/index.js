@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -6,9 +7,11 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Kanji App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/fire-kanji.svg" />
       </Head>
-      <main className={styles.main}></main>
+      <main>
+        <h1>Learn all Grade School Kanji</h1>
+      </main>
     </div>
   );
 }
