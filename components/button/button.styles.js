@@ -43,6 +43,7 @@ export const Button = styled.button`
   outline: none;
   transition: all 0.5s ease-in-out;
   width: ${(props) => (props.lgBtn ? "120px" : props.mdBtn ? "100px" : "80px")};
+  cursor: pointer;
   ${getButtonStyles}
   ${buttonMargins}
 `;

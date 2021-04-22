@@ -46,7 +46,7 @@ a {
 }
 
 .MuiPaper-root {
-  background-color: whitesmoke !important;
+  background-color: grey !important;
 }
 
 @media screen and (max-height: 780px) {

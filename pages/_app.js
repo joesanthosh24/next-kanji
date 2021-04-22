@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { colors } from "../themes";
+import { colors, fonts } from "../themes";
 
 import Layout from "../components/layout.component";
 
@@ -7,6 +7,7 @@ import "../styles/globals.css";
 
 const theme = {
   colors,
+  fonts,
 };
 
 function MyApp({ Component, pageProps }) {

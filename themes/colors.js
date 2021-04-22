@@ -3,4 +3,7 @@ export const colors = {
   secondary: "#ca79d1",
   light: "#fff",
   dark: "#000",
+  grey: "grey",
+  tertiary: "#d9c2c1",
+  whitesmoke: "whitesmoke",
 };
