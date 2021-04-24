@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 import styles from "../styles/Home.module.css";
 import pageStyles from "../styles/index.module.css";
 
@@ -10,10 +8,6 @@ import CustomButton from "../components/button/button.component";
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Kanji App</title>
-        <link rel="icon" href="/images/fire-kanji.svg" />
-      </Head>
       <div className="page">
         <div className={pageStyles.home}>
           <FireKanji />

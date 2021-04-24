@@ -4,6 +4,13 @@
   background-size: cover;
   color: #fff;
   flex: 1;
+  height: 100%;
+}
+
+.containerNotHome {
+  background: #131212;
+  height: 100vh;
+  flex: 1;
 }
 
 @media screen and (max-width: 1080px) {

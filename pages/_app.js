@@ -1,4 +1,6 @@
 import { ThemeProvider } from "styled-components";
+import Head from "next/head";
+
 import { colors, fonts } from "../themes";
 
 import Layout from "../components/layout.component";
@@ -13,6 +15,10 @@ const theme = {
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
+      <Head>
+        <title>Kanji App</title>
+        <link rel="icon" href="/images/fire-kanji.svg" />
+      </Head>
       <Layout>
         <Component {...pageProps} />
       </Layout>
