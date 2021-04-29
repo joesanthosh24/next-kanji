@@ -1,8 +1,8 @@
 import { ItemCard } from "./kanji-card.styles";
 
-const KanjiCard = ({ character, ...otherProps }) => {
+const KanjiCard = ({ character, selectCharacter, ...otherProps }) => {
   return (
-    <ItemCard {...otherProps}>
+    <ItemCard onClick={() => selectCharacter(character)} {...otherProps}>
       <h1>{character}</h1>
     </ItemCard>
   );

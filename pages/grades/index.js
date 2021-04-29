@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import styles from "../../styles/Home.module.css";
 import { GradesPage } from "../../styles/grades.styles.js";
 

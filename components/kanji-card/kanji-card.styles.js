@@ -55,6 +55,7 @@ export const ItemCard = styled.div`
 
   :hover {
     transform: scale(1.1);
+    cursor: pointer;
   }
 
   @media screen and (max-width: 900px) {
