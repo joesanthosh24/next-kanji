@@ -1,5 +1,7 @@
 import { GradeScrollWrapper, Item } from "./grade-scroll.styles";
 
+import KanjiCard from "../kanji-card/kanji-card.component";
+
 const GradeScroll = ({ grade, characters }) => {
   const textToDisplay =
     grade < "8" ? `Grade ${grade} Kanji` : "Middle and High School Kanji";
@@ -9,7 +11,7 @@ const GradeScroll = ({ grade, characters }) => {
       <h3>{textToDisplay}</h3>
       <GradeScrollWrapper>
         {characters.map((character) => (
-          <Item key={character}>{character}</Item>
+          <KanjiCard key={character} character={character} inverted />
         ))}
       </GradeScrollWrapper>
     </div>

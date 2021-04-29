@@ -1,0 +1,67 @@
+import styled, { css } from "styled-components";
+
+const regularCardStyles = css`
+  background-color: ${(props) => props.theme.colors.light};
+  color: ${(props) => props.theme.colors.primary};
+  border-color: ${(props) => props.theme.colors.primary};
+`;
+
+const invertedCardStyles = css`
+  background-color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.light};
+  border-color: ${(props) => props.theme.colors.light};
+`;
+
+const secondaryCardStyles = css`
+  background-color: ${(props) => props.theme.colors.light};
+  color: ${(props) => props.theme.colors.secondary};
+  border-color: ${(props) => props.theme.colors.secondary};
+`;
+
+const tertiaryCardStyles = css`
+  background-color: ${(props) => props.theme.colors.light};
+  color: ${(props) => props.theme.colors.tertiary};
+  border-color: ${(props) => props.theme.colors.tertiary};
+`;
+
+const getColorStyles = (props) => {
+  if (props.secondary) {
+    return secondaryCardStyles;
+  }
+  if (props.tertiary) {
+    return tertiaryCardStyles;
+  }
+  if (props.inverted) {
+    return invertedCardStyles;
+  }
+
+  return regularCardStyles;
+};
+
+export const ItemCard = styled.div`
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 200px;
+  line-height: 110px;
+  text-align: center;
+  transition: all 0.7s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+  padding: 80px;
+  ${(props) => getColorStyles(props)}
+
+  :hover {
+    transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: 75px;
+
+    :hover {
+      transform: none;
+    }
+  }
+`;

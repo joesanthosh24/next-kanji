@@ -6,23 +6,18 @@ export const GradeScrollWrapper = styled.div`
   margin: 25px 90px;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  border: 5px solid ${(props) => props.theme.colors.primary};
+  padding: 20px;
+  border-radius: 5%;
+  background-color: ${(props) => props.theme.colors.light};
 
   ::-webkit-scrollbar {
     display: none;
   }
 
-  @media screen and (max-width: 1000px) {
-    flex-direction: column;
+  @media screen and (max-width: 900px) {
+    width: 200px;
+    margin-right: auto;
+    padding: 2px;
   }
-`;
-
-export const Item = styled.div`
-  min-width: 150px;
-  margin-right: 15px;
-  margin-top: 10px;
-  height: 250px;
-  line-height: 110px;
-  text-align: center;
-  background-color: ${(props) => props.theme.colors.light};
-  color: ${(props) => props.theme.colors.dark};
 `;
