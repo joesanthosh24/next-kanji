@@ -1,6 +1,7 @@
 import styles from "../../styles/Home.module.css";
 
 import KanjiCard from "../../components/kanji-card/kanji-card.component";
+import ArrayTextDisplay from "../../components/array-text-display/array-text-display.component";
 
 import { DisplayHeader } from "../../styles/kanji-char.styles";
 
@@ -14,7 +15,6 @@ export async function getStaticPaths() {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.length);
       kanjiData = data;
     });
 
@@ -55,19 +55,44 @@ export async function getStaticProps(context) {
 
 const CharacterInfoPage = ({ character, charData }) => {
   const decodedCharacter = decodeURI(character);
-  console.log(charData);
-  const { grade, jlpt, stroke_count } = charData;
+  const {
+    grade,
+    jlpt,
+    stroke_count,
+    meanings,
+    kun_readings,
+    on_readings,
+  } = charData;
 
   return (
     <div className={styles.containerNotHome}>
       <DisplayHeader>
         <h1>{decodedCharacter}</h1>
       </DisplayHeader>
-      <br style={{ backgroundColor: "white", width: "10px", height: "10px" }} />
       <div style={{ textAlign: "center", color: "white" }}>
-        <p>Grade: {grade}</p>
-        <p>JLPT Level N{jlpt}</p>
+        {grade && <p>Grade: {grade}</p>}
+        <br />
+        {jlpt && <p>JLPT Level N{jlpt}</p>}
+        <br />
         <p>Stroke Count: {stroke_count}</p>
+        <br />
+        <ArrayTextDisplay title="Meanings" contents={meanings} />
+        {kun_readings.length > 0 && (
+          <>
+            <br />
+            <ArrayTextDisplay
+              title="Japanese Readings"
+              contents={kun_readings}
+            />
+          </>
+        )}
+        {on_readings.length > 0 && (
+          <>
+            <br />
+            <ArrayTextDisplay title="Chinese Readings" contents={on_readings} />
+          </>
+        )}
+        <br />
       </div>
     </div>
   );

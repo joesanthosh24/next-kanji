@@ -16,7 +16,7 @@ const SideDrawer = ({ isOpen, closeDrawer }) => {
   const [drawerItems] = useState([
     { text: "Home", Icon: icons.Home(), link: "/" },
     { text: "Grades", Icon: icons.Grades(), link: "/grades" },
-    { text: "Characters", Icon: icons.Characters(), link: "/characters" },
+    { text: "Characters", Icon: icons.Characters(), link: "/kanji" },
   ]);
 
   return (
