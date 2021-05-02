@@ -60,6 +60,17 @@ const getButtonSize = (props) => {
   `;
 };
 
+const getPaddings = css`
+  padding-left: ${(props) =>
+    props.plMd ? "10px" : props.plLg ? "15px" : props.plXl ? "20px" : "5px"};
+  padding-right: ${(props) =>
+    props.prMd ? "10px" : props.prLg ? "15px" : props.prXl ? "20px" : "5px"};
+  padding-top: ${(props) =>
+    props.ptMd ? "10px" : props.ptLg ? "15px" : props.ptXl ? "20px" : "5px"};
+  padding-bottom: ${(props) =>
+    props.pbMd ? "10px" : props.pbLg ? "15px" : props.pbXl ? "20px" : "5px"};
+`;
+
 const getButtonStyles = (props) => {
   return props.invertedBtn ? invertedButtonStyles : buttonStyles;
 };
@@ -70,8 +81,10 @@ export const Button = styled.button`
   outline: none;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
-  height: 60px;
-  ${getButtonStyles}
-  ${buttonMargins}
-  ${(props) => getButtonSize(props)}
+  height: ${(props) =>
+    props.hMd ? "35px" : props.hLg ? "45px" : props.hXlg ? "60px" : "20px"};
+  ${getButtonStyles};
+  ${buttonMargins};
+  ${getPaddings};
+  ${(props) => getButtonSize(props)};
 `;

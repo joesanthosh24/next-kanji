@@ -101,8 +101,10 @@ const CharacterInfoPage = ({ character, charData }) => {
         <br />
       </CharacterInfoContainer>
       <ButtonContainer direction="column">
-        <CustomButton fit>Add To Study List</CustomButton>
-        <CustomButton onClick={() => router.back()} fit invertedBtn>
+        <CustomButton fit hXlg>
+          Add To Study List
+        </CustomButton>
+        <CustomButton onClick={() => router.back()} fit hXlg invertedBtn>
           Go Back
         </CustomButton>
       </ButtonContainer>

@@ -15,10 +15,10 @@ export default function Home() {
             <h1 className="heading-primary">Fire Kanji</h1>
             <h2 className="heading-secondary">Learn all Grade School kanji</h2>
           </div>
-          <CustomButton mtMd mdBtn mrSm>
+          <CustomButton mtMd md hMd mrSm>
             Log In
           </CustomButton>
-          <CustomButton mtLg mdBtn invertedBtn mlSm>
+          <CustomButton mtLg md hMd invertedBtn mlSm>
             Sign In
           </CustomButton>
         </div>

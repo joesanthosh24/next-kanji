@@ -6,3 +6,7 @@ export const CharactersContainer = styled.div`
   padding: 90px;
   flex-wrap: wrap;
 `;
+
+export const CharacterHeading = styled.h1`
+  margin-top: 75px;
+`;

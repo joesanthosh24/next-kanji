@@ -1,5 +1,8 @@
 import KanjiCard from "../../components/kanji-card/kanji-card.component";
-import { CharactersContainer } from "../../styles/characters.style";
+import {
+  CharactersContainer,
+  CharacterHeading,
+} from "../../styles/characters.style";
 import { useRouter } from "next/router";
 
 import styles from "../../styles/Home.module.css";
@@ -14,7 +17,6 @@ export async function getStaticProps() {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       return (characters = data);
     });
 
@@ -31,7 +33,7 @@ const Characters = ({ characters }) => {
       className={styles.containerNotHome}
       style={{ textAlign: "center", color: "white" }}
     >
-      <h1>All {characters.length} Characters</h1>
+      <CharacterHeading>All {characters.length} Characters</CharacterHeading>
       <CharactersContainer>
         {characters.map((char) => (
           <KanjiCard
