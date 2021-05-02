@@ -33,6 +33,33 @@ const invertedButtonStyles = css`
   }
 `;
 
+const getButtonSize = (props) => {
+  if (props.md) {
+    return css`
+      width: 100px;
+    `;
+  }
+  if (props.lg) {
+    return css`
+      width: 130px;
+    `;
+  }
+  if (props.xl) {
+    return css`
+      width: 150px;
+    `;
+  }
+  if (props.fit) {
+    return css`
+      width: 100%;
+    `;
+  }
+
+  return css`
+    width: 80px;
+  `;
+};
+
 const getButtonStyles = (props) => {
   return props.invertedBtn ? invertedButtonStyles : buttonStyles;
 };
@@ -42,8 +69,9 @@ export const Button = styled.button`
   border-radius: 20px;
   outline: none;
   transition: all 0.5s ease-in-out;
-  width: ${(props) => (props.lgBtn ? "120px" : props.mdBtn ? "100px" : "80px")};
   cursor: pointer;
+  height: 60px;
   ${getButtonStyles}
   ${buttonMargins}
+  ${(props) => getButtonSize(props)}
 `;

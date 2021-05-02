@@ -11,3 +11,8 @@ export const DisplayHeader = styled.div`
   margin-right: 40px;
   border-bottom: 1px solid white;
 `;
+
+export const CharacterInfoContainer = styled.div`
+  text-align: center;
+  color: ${(props) => props.theme.colors.light};
+`;

@@ -1,9 +1,15 @@
+import { useRouter } from "next/router";
+
 import styles from "../../styles/Home.module.css";
 
-import KanjiCard from "../../components/kanji-card/kanji-card.component";
 import ArrayTextDisplay from "../../components/array-text-display/array-text-display.component";
+import ButtonContainer from "../../components/button-container/button-container.component";
+import CustomButton from "../../components/button/button.component";
 
-import { DisplayHeader } from "../../styles/kanji-char.styles";
+import {
+  DisplayHeader,
+  CharacterInfoContainer,
+} from "../../styles/kanji-char.styles";
 
 export async function getStaticPaths() {
   let kanjiData = [];
@@ -21,7 +27,6 @@ export async function getStaticPaths() {
   const paths = [];
 
   kanjiData.forEach((kanji) => paths.push({ params: { char: kanji } }));
-  console.log(paths);
 
   return {
     paths,
@@ -32,7 +37,6 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { params } = context;
   let character = params.char;
-  console.log(character);
 
   character = encodeURI(character);
 
@@ -54,6 +58,8 @@ export async function getStaticProps(context) {
 }
 
 const CharacterInfoPage = ({ character, charData }) => {
+  const router = useRouter();
+
   const decodedCharacter = decodeURI(character);
   const {
     grade,
@@ -69,7 +75,7 @@ const CharacterInfoPage = ({ character, charData }) => {
       <DisplayHeader>
         <h1>{decodedCharacter}</h1>
       </DisplayHeader>
-      <div style={{ textAlign: "center", color: "white" }}>
+      <CharacterInfoContainer>
         {grade && <p>Grade: {grade}</p>}
         <br />
         {jlpt && <p>JLPT Level N{jlpt}</p>}
@@ -93,7 +99,13 @@ const CharacterInfoPage = ({ character, charData }) => {
           </>
         )}
         <br />
-      </div>
+      </CharacterInfoContainer>
+      <ButtonContainer direction="column">
+        <CustomButton fit>Add To Study List</CustomButton>
+        <CustomButton onClick={() => router.back()} fit invertedBtn>
+          Go Back
+        </CustomButton>
+      </ButtonContainer>
     </div>
   );
 };
