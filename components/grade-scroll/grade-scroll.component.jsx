@@ -18,7 +18,7 @@ const GradeScroll = ({ grade, characters, router }) => {
       <GradeScrollWrapper>
         {characters.map((character) => (
           <KanjiCard
-            selectCharacter={handleSelection}
+            onClick={handleSelection}
             key={character}
             character={character}
             inverted

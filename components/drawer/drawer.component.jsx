@@ -17,6 +17,7 @@ const SideDrawer = ({ isOpen, closeDrawer }) => {
     { text: "Home", Icon: icons.Home(), link: "/" },
     { text: "Grades", Icon: icons.Grades(), link: "/grades" },
     { text: "Characters", Icon: icons.Characters(), link: "/kanji" },
+    { text: "Study", Icon: icons.Study(), link: "/study-list" },
   ]);
 
   return (

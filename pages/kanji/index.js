@@ -40,7 +40,7 @@ const Characters = ({ characters }) => {
             key={char}
             character={char}
             curvedMd
-            selectCharacter={() => router.push(`/kanji/${char}`)}
+            onClick={() => router.push(`/kanji/${char}`)}
           />
         ))}
       </CharactersContainer>

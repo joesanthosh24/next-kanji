@@ -1,4 +1,7 @@
 import { useRouter } from "next/router";
+import { connect } from "react-redux";
+
+import { addToListSuccess } from "../../redux/actions/study-list-actions";
 
 import styles from "../../styles/Home.module.css";
 
@@ -57,18 +60,12 @@ export async function getStaticProps(context) {
   };
 }
 
-const CharacterInfoPage = ({ character, charData }) => {
+const CharacterInfoPage = ({ character, charData, addKanji }) => {
   const router = useRouter();
 
   const decodedCharacter = decodeURI(character);
-  const {
-    grade,
-    jlpt,
-    stroke_count,
-    meanings,
-    kun_readings,
-    on_readings,
-  } = charData;
+  const { grade, jlpt, stroke_count, meanings, kun_readings, on_readings } =
+    charData;
 
   return (
     <div className={styles.containerNotHome}>
@@ -101,7 +98,7 @@ const CharacterInfoPage = ({ character, charData }) => {
         <br />
       </CharacterInfoContainer>
       <ButtonContainer direction="column">
-        <CustomButton fit hXlg>
+        <CustomButton onClick={() => addKanji(charData)} fit hXlg>
           Add To Study List
         </CustomButton>
         <CustomButton onClick={() => router.back()} fit hXlg invertedBtn>
@@ -112,4 +109,8 @@ const CharacterInfoPage = ({ character, charData }) => {
   );
 };
 
-export default CharacterInfoPage;
+const mapDispatchToProps = (dispatch) => ({
+  addKanji: (kanji) => dispatch(addToListSuccess(kanji)),
+});
+
+export default connect(null, mapDispatchToProps)(CharacterInfoPage);
