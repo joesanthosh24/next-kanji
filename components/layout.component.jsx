@@ -1,14 +1,13 @@
-import { useState } from "react";
 import Head from "next/head";
+import { connect } from "react-redux";
 
 import { MenuIconStyled, IconButtonStyled } from "./layout.styles";
 
-import Footer from "./footer/footer.component";
+import { openDrawer } from "../redux/actions/drawer-actions";
+
 import SideDrawer from "./drawer/drawer.component";
 
-const Layout = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const Layout = ({ children, openDrawer }) => {
   return (
     <div
       style={{
@@ -23,13 +22,17 @@ const Layout = ({ children }) => {
         <title>Kanji App</title>
         <link rel="icon" href="/images/fire-kanji.svg" />
       </Head>
-      <IconButtonStyled onClick={() => setIsOpen(true)}>
+      <IconButtonStyled onClick={() => openDrawer()}>
         <MenuIconStyled />
       </IconButtonStyled>
-      <SideDrawer isOpen={isOpen} closeDrawer={() => setIsOpen(false)} />
+      <SideDrawer />
       {children}
     </div>
   );
 };
 
-export default Layout;
+const mapDispatchToProps = (dispatch) => ({
+  openDrawer: () => dispatch(openDrawer()),
+});
+
+export default connect(null, mapDispatchToProps)(Layout);
